@@ -9,11 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var currentValue: Int = 50
+    // this outlet stores a reference to the slider as a new instance var
+    @IBOutlet weak var slider: UISlider!
+    var currentValue: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        currentValue = lroundf(slider.value)
     }
 
     @IBAction func showAlert() {
