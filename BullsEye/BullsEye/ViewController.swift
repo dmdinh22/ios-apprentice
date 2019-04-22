@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     // this outlet stores a reference to the slider as a new instance var
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var targetLabel: UILabel!
     var currentValue: Int = 0
     var targetValue = 0
 
@@ -42,6 +43,11 @@ class ViewController: UIViewController {
         // uncomment below and comment one line above to reset to middle each new round
 //        currentValue = 50
 //        slider.value = Float(currentValue)
+        updateLabels()
+    }
+    
+    func updateLabels() {
+        targetLabel.text = String(targetValue) // or "\(targetValue)"
     }
 }
 
