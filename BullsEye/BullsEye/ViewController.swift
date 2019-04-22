@@ -12,14 +12,18 @@ class ViewController: UIViewController {
     // this outlet stores a reference to the slider as a new instance var
     @IBOutlet weak var slider: UISlider!
     var currentValue: Int = 0
+    var targetValue = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         currentValue = lroundf(slider.value)
+        targetValue = Int.random(in: 1...100)
     }
 
     @IBAction func showAlert() {
-        let message = "The value of the slider is: \(currentValue)"
+        let message = "The value of the slider is: \(currentValue)" +
+                      "\nThe target value is: \(targetValue)"
         let alert = UIAlertController(title: "Hello, World", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         
